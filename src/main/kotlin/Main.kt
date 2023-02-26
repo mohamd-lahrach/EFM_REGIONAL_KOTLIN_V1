@@ -50,15 +50,21 @@ fun main() {
     for ((french, englishList) in map) {
         println("$french: ${englishList.joinToString(", ")}")
     }
+    println("No English equivalent found".acronym())
 }
 
 fun String.isEmptyOrBlank(): Boolean {
     return this.isEmpty() || this.isBlank()
 }
 fun String.acronym(): String {
-    return this.trim().split("\\s+".toRegex())
-        .map { it.trim().first().toUpperCase() }
-        .joinToString("")
+
+    var acronym = ""
+    val words = this.trim().split("\\s+".toRegex())
+    for (word in words){
+        val firstCapitalLetter = word.trim().first().uppercaseChar()
+        acronym += firstCapitalLetter
+    }
+    return acronym
 }
 
 

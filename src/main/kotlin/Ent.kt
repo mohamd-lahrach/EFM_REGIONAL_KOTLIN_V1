@@ -2,16 +2,14 @@
 class Ent(var englishWord: String, var frenchWord: String) {
 
     // Setters for English and French words
-    @JvmName("setEnglishWord1")
-    fun setEnglishWord(englishWord: String) {
+    fun setEnglishWordEnt(englishWord: String) {
         if (englishWord.trim().isEmpty()) {
             throw IllegalArgumentException("English word cannot be empty")
         }
         this.englishWord = englishWord.trim()
     }
 
-    @JvmName("setFrenchWord1")
-    fun setFrenchWord(frenchWord: String) {
+    fun setFrenchWordEnt(frenchWord: String) {
         if (frenchWord.trim().isEmpty()) {
             throw IllegalArgumentException("French word cannot be empty")
         }
